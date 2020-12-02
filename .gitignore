@@ -1,0 +1,7 @@
+*.o
+*.hi
+*.dyn_hi
+*.exe
+*.input
+*.output.*
+session_cookie
