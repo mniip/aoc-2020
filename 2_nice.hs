@@ -1,7 +1,8 @@
+import Control.Applicative
 import Control.Monad
 import Data.Bits
-import Data.List.Split
 import System.Environment
+import qualified Text.ParserCombinators.ReadP as P
 
 main :: IO ()
 main = do
@@ -13,11 +14,12 @@ main = do
 readInput :: String -> [(Int, Int, Char, String)]
 readInput = map readLine . lines
   where
-    readLine xs = case splitOnP ": " xs of
-      (ys, pw) -> case splitOnP " " ys of
-        (zs, [a]) -> case splitOnP "-" zs of
-          (i, j) -> (read i, read j, a, pw)
-    splitOnP sep xs = case splitOn sep xs of [a, b] -> (a, b)
+    readLine xs = case P.readP_to_S parser xs of [(x, [])] -> x
+    parser = (,,,)
+      <$> P.readS_to_P reads <* P.char '-'
+      <*> P.readS_to_P reads <* P.char ' '
+      <*> P.get <* P.string ": "
+      <*> P.munch (const True)
 
 printOutput :: Int -> IO ()
 printOutput = print
