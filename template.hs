@@ -94,6 +94,7 @@ import qualified System.Random as R
 import qualified Text.ParserCombinators.ReadP as P
 import Text.PrettyPrint.HughesPJ hiding (empty, first, (<>))
 import qualified Text.PrettyPrint.HughesPJ
+import Text.Read (readMaybe)
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Char8 as BSC
 import qualified Data.ByteString.Lazy as BSL
