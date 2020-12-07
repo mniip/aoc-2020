@@ -4,7 +4,6 @@
 module Main where
 
 import Control.Monad
-import Data.List.Split
 import System.Environment
 
 main :: IO ()
@@ -13,9 +12,6 @@ main = do
   input <- readInput <$> getContents
   when ("1" `elem` args || null args) $ printOutput $ solve1 input
   when ("2" `elem` args || null args) $ printOutput $ solve2 input
-
-splitOnP :: Eq a => [a] -> [a] -> ([a], [a])
-splitOnP p xs = case splitOn p xs of [a, b] -> (a, b)
 
 readInput :: String -> [(Int, Int)]
 readInput = map readline . lines
