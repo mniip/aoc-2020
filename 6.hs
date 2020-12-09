@@ -1,8 +1,6 @@
 {-# LANGUAGE PartialTypeSignatures, TypeApplications #-}
 {-# OPTIONS_GHC -Wno-partial-type-signatures #-}
 
-module Main where
-
 import Control.Monad
 import qualified Data.Set as S
 import Data.List.Split

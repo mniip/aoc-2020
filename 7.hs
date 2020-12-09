@@ -1,8 +1,6 @@
 {-# LANGUAGE PartialTypeSignatures, TypeApplications #-}
 {-# OPTIONS_GHC -Wno-partial-type-signatures #-}
 
-module Main where
-
 import Control.Applicative
 import Control.Monad
 import Data.Maybe
